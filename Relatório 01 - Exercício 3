@@ -1,0 +1,7 @@
+10 INPUT "Insira a temperatura em Celsius"; cels
+20 LET kelv = VAL(cels) + 273
+30 LET fahr = (VAL(cels)*1.8) + 32
+40 PRINT "Temperatura em Celsius: " + cels
+50 PRINT "Temperatura em Kelvin: " + kelv
+55 PRINT "Temperatura em Fahrenheit: " + fahr
+60 END
