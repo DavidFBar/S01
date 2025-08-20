@@ -1,0 +1,5 @@
+10 INPUT "Insira sua altura (em metros): "; alt
+20 INPUT "Insira seu peso (em kg): "; pes
+30 LET imc = VAL(pes)/(VAL(alt)*VAL(alt))
+40 PRINT "Seu IMC é: " + imc
+50 END
