@@ -1,0 +1,11 @@
+10 INPUT "Insira a nota NP1: "; np1
+20 INPUT "Insira a nota NP2: "; np2
+30 LET soma = VAL(np1) + VAL(np2)
+40 LET npa = VAL(soma) / 2
+50 IF npa > 60 THEN PRINT "Aprovado direto" ELSE IF npa < 30 THEN PRINT "Reprovado direto"
+60 IF npa > 60 OR npa < 30 THEN END
+70 INPUT "Insira a nota NP3: "; np3
+80 LET somanova = VAL(npa) + VAL(np3)
+90 LET npf = VAL(somanova) / 2
+100 IF npf > 50 THEN PRINT "Aprovado pela NP3" ELSE PRINT "Reprovado na NP3"
+110 END
