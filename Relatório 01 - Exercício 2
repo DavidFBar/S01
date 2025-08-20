@@ -1,0 +1,7 @@
+10 LET numero = INT((RND() * 100)+0)
+20 INPUT "Insira um número (0 a 100)"; palpite
+30 IF palpite < numero THEN PRINT "O número é MAIOR que seu palpite" 
+35 IF palpite > numero THEN PRINT "O número é MENOR que seu palpite"
+40 IF palpite < numero OR palpite > numero THEN GOTO 20
+50 PRINT "Parabéns! Você adivinhou corretamente!"
+60 END
