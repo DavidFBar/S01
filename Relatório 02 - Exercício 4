@@ -1,0 +1,26 @@
+function calculadora(n1,n2,op)
+  if op == "+" then
+    return n1 + n2
+  elseif op == "-" then
+    return n1 - n2
+    elseif op == "*" then
+      return n1 * n2
+    elseif op == "/" then
+      return n1 / n2
+  else
+    print("Operação inválida")
+    end
+  end
+
+print("Digite o primeiro número: ")
+local numb1 = tonumber(io.read())
+print("Digite o segundo número: ")
+local numb2 = tonumber(io.read())
+print("Digite a operação desejada (+, -, *, /): ")
+local oper = io.read()
+
+local res = calculadora(numb1, numb2, oper)
+if res == nil then
+else
+print(res)
+end
