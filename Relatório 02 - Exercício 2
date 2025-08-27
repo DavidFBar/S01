@@ -1,0 +1,16 @@
+local vetor = {}
+print("Digite a quantidade de numeros que deseja inserir: ")
+local n = tonumber(io.read())
+local maior
+
+for i = 1, n do
+    vetor[i] = tonumber(io.read())
+    if i == 1 then
+        maior = vetor[i]
+  end
+  if vetor[i] > maior then
+      maior = vetor[i]
+  end
+end
+
+print("O maior numero digitado foi: " .. maior)
