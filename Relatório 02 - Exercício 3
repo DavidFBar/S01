@@ -1,0 +1,23 @@
+local vetor = {}
+print("Digite a quantidade de numeros que deseja inserir: ")
+local n = tonumber(io.read())
+local novoVetor = {}
+local qntPar = 0
+
+print("Digite os numeros: ")
+for i = 1, n do
+    vetor[i] = tonumber(io.read())
+   if vetor[i]%2 == 0 then
+      table.insert(novoVetor, vetor[i])
+      qntPar = qntPar + 1
+  end
+end
+
+if qntPar == 0 then
+  print("Nao ha numeros pares")
+else
+  print("Os numeros pares sao: ")
+for i = 1, qntPar do
+  print(novoVetor[i])
+end
+end
