@@ -1,0 +1,12 @@
+print("Digite os valores de M e N (inteiros): ")
+local M = tonumber(io.read())
+local N = tonumber(io.read())
+print("Digite o valor de X (inteiro): ")
+local X = tonumber(io.read())
+
+print("Os multiplos de " .. X .. " entre " .. M .. " e " .. N .. " sao: ")
+for i = M, N do
+    if i % X == 0 then
+    print(i)
+end
+end
