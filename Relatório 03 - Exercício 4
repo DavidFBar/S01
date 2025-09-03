@@ -1,0 +1,19 @@
+fn calcular_media(nota1: f64, nota2: f64, nota3: f64) -> f64 {
+  let soma = nota1*2.0 + nota2*3.0 + nota3*5.0;
+  let media = soma / 10.0;
+  return media;
+}
+
+fn main() {
+  
+    let nota1 = 7.5; // peso 2
+    let nota2 = 8.0; // peso 3
+    let nota3 = 9.2; // peso 5
+
+    let media = calcular_media(nota1, nota2, nota3);
+  if media >= 7.0 {
+    println!("Aprovado");
+  }else{
+    println!("Reprovado");
+  }
+}
