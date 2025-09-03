@@ -1,0 +1,52 @@
+use std::io;
+fn eh_par(numero: i32) -> bool {
+  if numero % 2 == 0 {
+    return true;
+  } else {
+    return false;
+  }
+}
+  
+fn main() {
+    println!("Jogador 1, escolha par ou impar:");
+    let mut palpite = String::new();
+    io::stdin()
+      .read_line(&mut palpite)
+      .expect("Failed to read line");
+    let palpite = palpite.trim();
+  
+   println!("Jogador 1, escolha um numero:");
+   let mut num1 = String::new();
+   io::stdin()
+    .read_line(&mut num1)
+    .expect("Failed to read line");
+  
+  let num1: i32 = num1
+    .trim()
+    .parse()
+    .expect("Please type a number!");
+
+  println!("Jogador 2, escolha um numero:");
+  let mut num2 = String::new();
+  io::stdin()
+    .read_line(&mut num2)
+    .expect("Failed to read line");
+
+   let num2: i32 = num2
+    .trim()
+    .parse()
+    .expect("Please type a number!");
+
+  let soma = num1 + num2;
+
+  println!("A soma é: {}", soma);
+  if eh_par(soma) == true && palpite == "par" {
+    println!("Jogador 1 ganhou!");
+  }else if eh_par(soma) == false && palpite == "impar" {
+    println!("Jogador 1 ganhou!");
+  }else if eh_par(soma) == false && palpite == "par" {
+    println!("Jogador 2 ganhou!");
+  }else if eh_par(soma) == true && palpite == "impar" {
+    println!("Jogador 2 ganhou!");
+}
+}
