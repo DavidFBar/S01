@@ -1,0 +1,16 @@
+package main
+import (
+	"fmt"
+)
+
+func main() {
+	 fmt.Println("Insira um numero inteiro:")
+	 var num int
+	 fmt.Scan(&num)
+	switch {
+	case num % 2 == 0:
+		fmt.Println("O numero é par")	
+		default:
+				fmt.Println("O numero é impar")
+	}
+}
