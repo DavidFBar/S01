@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+double celsiusParaFahrenheit(double c){
+	return (c*1.8)+32;
+}
+double celsiusParaKelvin(double c){
+	return c+273.15;
+}
+int main(){
+	
+	int op=0;
+	double cels;
+	
+	do{
+		cout<<"Escolha uma opcao: "<<endl;
+		cout<<"1 - Converter Celsius para Fahrenheit."<<endl;
+		cout<<"2 - Converter Celsius para Kelvin"<<endl;
+		cout<<"3 - Sair"<<endl;
+		
+		cin>>op;
+		
+		switch(op){
+			case 1:
+			cout<<"Insira a temperatura em Celsius: "<<endl;
+			cin>>cels;
+			cout<<"A temperatura equivalente em Fahrenheit eh de: "<<celsiusParaFahrenheit(cels)<<endl;
+			break;
+		
+			case 2:
+			cout<<"Insira a temperatura em Celsius: "<<endl;
+			cin>>cels;
+			cout<<"A temperatura equivalente em Kelvin eh de: "<<celsiusParaKelvin(cels)<<endl;
+			break;
+			
+			case 3:
+			break;	
+		}
+		
+	}while(op != 3);
+	
+	cout<<"Fechando o programa..."<<endl;
+
+	return 0;
+}
