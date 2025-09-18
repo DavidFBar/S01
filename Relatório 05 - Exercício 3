@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int qntN;
+	int media=0;
+	cout<<"Digite quantas notas serao inseridas: "<<endl;
+	cin>>qntN;
+	
+	int notas[qntN];
+	cout<<"Digite as notas: "<<endl;
+	for(int i=0; i < qntN; i++){
+		cin>>notas[i];
+		while(notas[i] < 0 or notas[i] > 10){
+			cout<<"A nota deve ser entre 0 e 10. Digite novamente: o"<<endl;
+			cin>>notas[i];
+		}
+		media = media + notas[i];
+	}
+	
+	media = media/qntN;
+	if(media >= 7){
+		cout<<"Aprovado"<<endl;
+	}else{
+		cout<<"Reprovado"<<endl;
+	}
+	
+	return 0;
+}
