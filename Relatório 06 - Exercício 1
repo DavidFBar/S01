@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+class Personagem{
+		public:
+			string nome;
+			int nivel;
+			int dano;
+			int hp;
+		
+			// construtor	
+		Personagem(string nome, int nivel, int dano, int hp){
+			this->nome = nome;
+			this->nivel = nivel;
+			this->dano = dano;
+			this->hp = hp;
+		}
+		
+			//metodos
+		int atacar(Personagem& atacado){ 
+			cout<<nome<<" ataca "<<atacado.nome<<"!"<<endl;
+			atacado.hp = atacado.hp - dano;
+			cout<<"A vida de "<<atacado.nome<<" caiu para "<<atacado.hp<<"!"<<endl;
+			
+			return atacado.hp;
+		}	
+		
+		void printInfo(){
+			cout<<"Nome do personagem: "<<nome<<endl;
+			cout<<"Nível: "<<nivel<<endl;
+			cout<<"Dano: "<<dano<<endl;
+			cout<<"Pontos de vida: "<<hp<<endl;
+		}
+	};
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	// criação dos personagens
+	
+	Personagem p1("Marcelo Cisneiros", 9, 6, 36);
+	Personagem p2("Touro da Atletica", 7, 8, 29);
+	
+	p1.printInfo();
+	cout<<endl;
+	p2.printInfo();
+	cout<<endl;
+	
+	p1.atacar(p2);
+	cout<<endl;
+	
+	p1.printInfo();
+	cout<<endl;
+	p2.printInfo();
+	cout<<endl;
+	
+	return 0;
+}
