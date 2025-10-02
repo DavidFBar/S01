@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+class Pessoa{
+	protected:
+		string nome;
+	public:
+		Pessoa(string nome){
+			this->nome = nome;
+		}
+		
+	virtual void apresentar(){
+		cout<<"Olá, meu nome é "<<nome<<" e eu sou uma pessoa."<<endl;
+	}	
+};
+class Professor : public Pessoa{
+	protected:
+		string dis; // disciplina
+	public:
+		Professor(string nome, string dis) : Pessoa(nome){
+			this->nome = nome;
+			this->dis = dis;
+		}
+		
+	void apresentar(){ // nn coloquei o override pq ele nao ta funcionando no Falcon, mas a sobreescrição funciona
+		cout<<"Olá, meu nome é "<<nome<<" e eu sou um(a) professor(a) de "<<dis<<"."<<endl;
+	}	
+};
+class Aluno : public Pessoa{
+	protected:
+		string curso;
+		int mat;
+	public:
+		
+		Aluno(string nome, string curso, int mat) : Pessoa(nome){
+			this->nome = nome;
+			this->curso = curso;
+			this->mat = mat;
+		}
+		
+	void apresentar(){ 
+		cout<<"Olá, meu nome é "<<nome<<" e eu sou um(a) aluno(a) de "<<curso<<"."<<endl;
+	}		
+};
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	Pessoa* prof = new Professor("Marcelo Cisneiros", "Paradigmas");
+	Pessoa* aluno = new Aluno("David", "Software", 582);
+	
+	prof->apresentar();
+	aluno->apresentar();
+	
+	delete prof;
+	delete aluno;
+	
+	return 0;
+}
