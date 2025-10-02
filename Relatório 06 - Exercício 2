@@ -6,13 +6,18 @@ class Pessoa{
 		int idade;
 	public:
 		
-	Pessoa(string nome){
+	Pessoa(string nome, int idade){
 			this->nome = nome;
+			this->idade = idade;
 		}
-// getter p pegar o nome pq ta privado
+// getter p pegar o nome e a idade pq ta privado
 	string getNome(){
 		return nome;
 	}	
+	
+	int getIdade(){
+		return idade;
+	}
 };
 
 class Protagonista : public Pessoa{
@@ -20,7 +25,7 @@ class Protagonista : public Pessoa{
 		int nivel;
 	public:	
 	
-	Protagonista(string nome, int nivel) : Pessoa(nome){
+	Protagonista(string nome, int nivel, int idade) : Pessoa(nome, idade){
 			 this->nivel = nivel;
 		 } 
 		 
@@ -34,7 +39,7 @@ class Personagem : public Pessoa{
 		int rank;
 	public:	
 	
-	Personagem(string nome, int rank) : Pessoa(nome){
+	Personagem(string nome, int rank, int idade) : Pessoa(nome, idade){
 		this->rank = rank;
 	}	
 	 void imprimirInfo() {
@@ -44,8 +49,8 @@ class Personagem : public Pessoa{
 int main(){
 	setlocale(LC_ALL, "Portuguese");
 	
-	Protagonista p1("Roberto", 3);
-	Personagem npc1("Bruna", 8);
+	Protagonista p1("Roberto", 3, 18);
+	Personagem npc1("Bruna", 8, 23);
 	
 	p1.imprimirInfo();
     npc1.imprimirInfo();
