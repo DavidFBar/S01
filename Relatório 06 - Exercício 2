@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+class Pessoa{
+	private:
+		string nome;
+		int idade;
+	public:
+		
+	Pessoa(string nome){
+			this->nome = nome;
+		}
+// getter p pegar o nome pq ta privado
+	string getNome(){
+		return nome;
+	}	
+};
+
+class Protagonista : public Pessoa{
+	private:
+		int nivel;
+	public:	
+	
+	Protagonista(string nome, int nivel) : Pessoa(nome){
+			 this->nivel = nivel;
+		 } 
+		 
+		void imprimirInfo() {
+        cout << "Protagonista: " <<getNome()<<", Nível: "<<nivel<<endl;
+    }
+};
+
+class Personagem : public Pessoa{
+	private:
+		int rank;
+	public:	
+	
+	Personagem(string nome, int rank) : Pessoa(nome){
+		this->rank = rank;
+	}	
+	 void imprimirInfo() {
+        cout << "Personagem: " <<getNome()<<", Rank: "<<rank<<endl;
+    }
+};
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	
+	Protagonista p1("Roberto", 3);
+	Personagem npc1("Bruna", 8);
+	
+	p1.imprimirInfo();
+    npc1.imprimirInfo();
+	
+	return 0;
+}
