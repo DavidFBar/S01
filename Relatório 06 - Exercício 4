@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+using namespace std;
+class SerVivo{
+	protected:
+		string nome;
+	public:
+		SerVivo(string nome){
+			this->nome = nome;
+	  }
+	  
+	  virtual void apresentar(){
+		  cout<<"A espécie desse ser vivo é chamada de: "<<nome<<endl;
+	  }	
+};
+class Humano : public SerVivo{
+	public:
+		
+		Humano(string nome) : SerVivo(nome){
+			this->nome = nome;
+	  }
+	  
+		void apresentar(){
+			cout<<nome<<" diz que: O ser humano, descendente dos primatas, é a espécie cuja civilização é a maior e mais populosa do planeta."<<endl;
+			cout<<endl;
+		}
+};
+class Elfo : public SerVivo{
+	public:
+		
+		Elfo(string nome) : SerVivo(nome){
+			this->nome = nome;
+	  }
+		void apresentar(){
+			cout<<nome<<" diz que: Os elfos se parecem com seres humanos, porém vivem mais tempo, possuem orelhas pontudas, e tem uma ligação forte com a natureza e a magia."<<endl;
+		   	cout<<endl;
+		}
+};
+class Fada : public SerVivo{
+	public:
+		
+		Fada(string nome) : SerVivo(nome){
+			this->nome = nome;
+	  }
+	  
+		void apresentar(){
+			cout<<nome<<" diz que: As fadas são seres vivos totalmente mágicos, pouco se sabe sobre suas origens e suas capacidades variam muito de uma fada para outra."<<endl;
+			cout<<endl;
+		}
+};
+int main(){
+		setlocale(LC_ALL, "Portuguese");
+		
+	SerVivo* s1 = new Humano("João da Silva");
+	SerVivo* s2 = new Elfo("Zelda Gomes");
+	SerVivo* s3 = new Fada("Sarah Fada");
+	
+	list<SerVivo*> seresV;
+	seresV.push_back(s1);
+	seresV.push_back(s2);
+	seresV.push_back(s3);
+	
+	for(list<SerVivo*>::iterator it = seresV.begin(); it != seresV.end(); it++){ // to usando o Falcon e nele nn funciona o for que tava no video, ent tive que fazer de outro jeito
+		(*it)->apresentar();
+	}
+	
+	delete s1;
+	delete s2;
+	delete s3;
+	
+	return 0;
+}
