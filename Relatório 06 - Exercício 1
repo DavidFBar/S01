@@ -16,12 +16,10 @@ class Personagem{
 		}
 		
 			//metodos
-		int atacar(Personagem& atacado){ 
+		void atacar(Personagem& atacado){ 
 			cout<<nome<<" ataca "<<atacado.nome<<"!"<<endl;
 			atacado.hp = atacado.hp - dano;
 			cout<<"A vida de "<<atacado.nome<<" caiu para "<<atacado.hp<<"!"<<endl;
-			
-			return atacado.hp;
 		}	
 		
 		void printInfo(){
