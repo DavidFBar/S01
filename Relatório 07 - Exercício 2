@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+
+public class Pokemon{
+	public string nome;
+	
+	public Pokemon(string nome){
+		this.nome = nome;
+	}
+	
+	public virtual void Atacar(){
+		Console.WriteLine("${nome} ataca!");
+	}
+}
+
+public class PokemonDeFogo : Pokemon{
+	
+	public PokemonDeFogo(string nome) : base(nome) { 
+	}
+	
+	public override void Atacar(){
+		Console.WriteLine($"{nome} usa Fire Blast!");
+	}
+}
+
+public class PokemonDeAgua : Pokemon{
+	
+	public PokemonDeAgua(string nome) : base(nome) { 
+	}
+	
+	public override void Atacar(){
+		Console.WriteLine($"{nome} usa Hydro Pump!");
+	}
+}
+
+public class Program
+{
+	public static void Main()
+	{
+		List<Pokemon> lista = new List<Pokemon>();
+		
+		lista.Add(new PokemonDeFogo("Charizard"));
+		lista.Add(new PokemonDeAgua("Blastoise"));
+				  
+		foreach(Pokemon p in lista){
+			p.Atacar();
+		}
+		
+	}
+}
