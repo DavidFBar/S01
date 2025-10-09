@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+
+public class MembroDaSociedade{
+	private string nome;
+	private string raca;
+	private string func;
+	
+	public MembroDaSociedade(string nome, string raca, string func){ // construtor
+		this.nome = nome;
+		this.raca = raca;
+		this.func = func;
+}
+	
+	public void Descrever(){ // metodo p descrever
+		Console.WriteLine($"{raca}, {func}"); // $ p ele nn ler literalmente os nome das variavel
+	}
+}
+
+public class Program
+{
+	public static void Main()
+	{
+		MembroDaSociedade membro1 = new MembroDaSociedade("Aragorn", "Humano", "Guardiao");
+		MembroDaSociedade membro2 = new MembroDaSociedade("Legolas", "Elfo", "Arqueiro");
+		
+		membro1.Descrever();
+		membro2.Descrever();
+	}
+}
