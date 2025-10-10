@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+public class MonstroSombrio{
+	public string nome;
+	
+	public MonstroSombrio(string nome){
+	this.nome = nome;	
+	}
+	
+	public virtual void Mover(){
+	Console.WriteLine($"{nome} esta se movendo.");	
+	}
+}
+public class Zumbi : MonstroSombrio{
+	
+	public Zumbi(string nome) : base(nome){
+		this.nome = nome;
+	}
+	
+	public override void Mover(){
+		Console.WriteLine($"{nome} esta se movendo rapidamente!");
+	}
+	
+}
+
+public class Espectro : MonstroSombrio{
+	public Espectro(string nome) : base(nome){
+		this.nome = nome;
+	}
+	
+	public override void Mover(){
+		Console.WriteLine($"{nome} esta se movendo lentamente...");
+	}
+}
+public class Program
+{
+	public static void Main()
+	{
+	
+		MonstroSombrio[] monstros = new MonstroSombrio[3];
+		monstros[0] = new Zumbi("Zombobobo");
+		monstros[1] = new Espectro("Fantasmatico");
+		monstros[2] = new MonstroSombrio("Ze Monstro da Silva");
+		
+		foreach(MonstroSombrio m in monstros){
+			m.Mover();
+		}
+}
+}
