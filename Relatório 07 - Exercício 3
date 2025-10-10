@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+
+public class Feitico{
+	public string nome;
+	
+	public Feitico(string nome){
+		this.nome = nome;
+	}
+}
+
+public class Grimorio{
+	public List<Feitico> feiticos = new List<Feitico>();
+	
+	public void Adicionar(Feitico f){
+		feiticos.Add(f);
+	}
+}
+
+public class Ferramenta{
+	public string tipo;
+	
+	public Ferramenta(string tipo){
+		this.tipo = tipo;
+	}
+}
+
+public class Maga{
+	public string nome;
+	public Grimorio grimorioFrieren{get; set;}
+	public List<Ferramenta> ferramentas{get; set;}
+	
+	public Maga(string nome, List<Ferramenta> ferramentas){
+		this.nome = nome;
+		this.ferramentas = ferramentas;
+		this.grimorioFrieren = new Grimorio();
+	}
+	
+	public void ExibirFerramentas(){
+		foreach(Ferramenta f in ferramentas){
+			Console.WriteLine($"{f.tipo}");
+		}
+		
+	}
+}
+
+public class Program
+{
+	public static void Main()
+	{
+		List<Ferramenta> ferramentas = new List<Ferramenta>();
+		
+		ferramentas.Add(new Ferramenta("Capacete"));
+		ferramentas.Add(new Ferramenta("Lanterna"));
+		
+		Maga m1 = new Maga("Frieren", ferramentas);
+		
+		m1.grimorioFrieren.Adicionar(new Feitico("Bola de Fogo"));
+		m1.grimorioFrieren.Adicionar(new Feitico("Escoliose"));
+		
+		m1.ExibirFerramentas();
+		
+	}
+}
