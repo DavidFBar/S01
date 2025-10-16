@@ -1,0 +1,36 @@
+from abc import ABC, abstractmethod
+
+class ArmaCorpoACorpo:
+
+  def __init__ (self, arma : str):
+    self.arma = arma
+
+  def __str__(self): # pra funcionar a saida de mostrar_equipe()
+    return self.arma
+  
+class PhantomThieves:
+  def __init__ (self, nome: str, arma : ArmaCorpoACorpo):
+    self.nome = nome
+    self.arma = arma
+
+class Joker:
+  def __init__ (self, arma : ArmaCorpoACorpo, equipe: list[PhantomThieves]):
+    self.equipe = equipe
+    self.arma = arma
+
+  def mostrar_equipe(self):
+    print(f"Joker (lider da equipe), arma: {self.arma}")
+    for membro in self.equipe:
+      print(f"Nome: {membro.nome}, arma: {membro.arma}")
+
+
+if __name__ == "__main__":
+
+  m1 = PhantomThieves("Jose", ArmaCorpoACorpo("Machado"))
+  m2 = PhantomThieves("Bruna", ArmaCorpoACorpo("Chave de Fenda"))
+  m3 = PhantomThieves("Bill", ArmaCorpoACorpo("Parafusadeira"))
+
+  equipe = [m1, m2, m3]
+
+  jkr = Joker(ArmaCorpoACorpo("Faca"), equipe)
+  jkr.mostrar_equipe()
