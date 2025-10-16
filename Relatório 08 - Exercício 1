@@ -1,0 +1,38 @@
+from abc import ABC, abstractmethod
+
+class Personagem:
+
+  def __init__ (self, vida : int, resis: int):
+    self._vida = vida
+    self._resis = resis
+
+  def get_vida(self):
+    return self._vida
+
+  def set_vida(self, nova_vida):
+    if nova_vida > 0:
+      self._vida = nova_vida
+    else:
+      print("A nova vida deve ser maior que 0!")
+
+  def __str__ (self):
+    return f"O personagem tem {self.vida} de vida e {self.resis} de resistencia."
+
+
+class Cavaleiro(Personagem):
+
+  def __init__(self, vida : int, resis : int, armadura_pesada : bool):
+    super().__init__(vida, resis) # usei a funcao super() pra chamar o construtor da classe mae
+    self.armadura_pesada = armadura_pesada
+
+  def __str__(self):
+    if self.armadura_pesada:
+        return f"O personagem tem {self.get_vida()} de vida, {self._resis} de resistência e tem uma armadura pesada."
+    else:
+        return f"O personagem tem {self.get_vida()} de vida, {self._resis} de resistência e não tem uma armadura pesada."
+
+
+if __name__ == "__main__":
+
+  pers = Cavaleiro(50, 12, True)
+  print(pers)
