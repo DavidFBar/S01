@@ -24,7 +24,6 @@ class Dano(Heroi):
   def usar_ultimate(self):
     print(f"O DPS {self.nome} usou a Ult!")
 
-
 if __name__ == "__main__":
 
   h1 = Tanque("Reinhardt")
