@@ -1,0 +1,38 @@
+from abc import ABC, abstractmethod
+
+class iCibernetico(ABC):
+  @abstractmethod
+  def realizar_hack(self):
+    pass
+
+class Implante:
+  def __init__ (self, custo : int, func : str):
+    self.custo = custo
+    self.func = func
+
+class NetRunner(iCibernetico):
+  def __init__ (self, nome : str, implante : Implante):
+    self.nome = nome
+    self.implante = implante
+
+  def realizar_hack(self):
+    print(f"NetRunner {self.nome} esta hackeando!")
+
+class Faccao:
+  def __init__ (self, membros : list[iCibernetico]):
+    self.membros = membros
+
+  def realizar_hack(self):
+    print("A Faccao mandou todos os membros executarem o hack!")
+    for membro in self.membros:
+      membro.realizar_hack()
+
+if __name__ == "__main__":
+
+  m1 = NetRunner("Bryan", Implante(1200, "Superforca"))
+  m2 = NetRunner("May", Implante(3000, "Supervisao"))
+  m3 = NetRunner("Clark", Implante(900, "Braco mecanico"))
+
+  fac = Faccao([m1,m2,m3])
+
+  fac.realizar_hack()
