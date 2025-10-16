@@ -18,7 +18,6 @@ class Personagem:
   def __str__ (self):
     return f"O personagem tem {self.vida} de vida e {self.resis} de resistencia."
 
-
 class Cavaleiro(Personagem):
 
   def __init__(self, vida : int, resis : int, armadura_pesada : bool):
@@ -30,7 +29,6 @@ class Cavaleiro(Personagem):
         return f"O personagem tem {self.get_vida()} de vida, {self._resis} de resistência e tem uma armadura pesada."
     else:
         return f"O personagem tem {self.get_vida()} de vida, {self._resis} de resistência e não tem uma armadura pesada."
-
 
 if __name__ == "__main__":
 
